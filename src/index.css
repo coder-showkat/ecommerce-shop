@@ -5,7 +5,7 @@
 @layer components {
   @media (hover: none) {
     *:hover {
-      cursor: auto !important;
+      cursor: none !important;
     }
   }
 }
