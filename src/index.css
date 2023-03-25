@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (hover: none) {
-  *:hover {
-    cursor: auto;
+@layer components {
+  @media (hover: none) {
+    *:hover {
+      cursor: auto !important;
+    }
   }
 }
