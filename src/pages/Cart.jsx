@@ -46,10 +46,10 @@ export default function Cart() {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className="max-w-screen-2xl mx-auto">
       <img src={imgCart} alt="cartImg" className="w-full h-56 object-cover" />
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 px-4 mt-6">
-        <div className="lg:col-span-3">
+      <div className="grid grid-cols-1 lg:grid-cols-6 gap-10 px-4 my-12">
+        <div className="lg:col-span-4">
           <h2 className="text-2xl font-semibold my-4">Shopping Cart</h2>
           <div>
             {carts.length === 0 ? (
@@ -60,9 +60,9 @@ export default function Cart() {
               carts.map((cart, i) => (
                 <div
                   key={i}
-                  className="flex flex-col md:flex-row border p-2 rounded-sm items-center justify-between my-6"
+                  className="flex flex-col md:flex-row gap-x-4 border p-2 pr-4 rounded-sm items-center justify-between my-6"
                 >
-                  <div className="flex flex-col md:flex-row w-44 h-52 items-center gap-2">
+                  <div className="flex flex-col md:flex-row flex-shrink-0 w-44 h-52 items-center gap-2">
                     <span
                       className="text-xl cursor-pointer"
                       onClick={() => removeCart(cart.title)}
@@ -75,7 +75,7 @@ export default function Cart() {
                       className="w-full h-44 object-cover"
                     />
                   </div>
-                  <h3 className="text-lg">{cart.title}</h3>
+                  <h3 className="text-lg flex-shrink">{cart.title}</h3>
                   <p className="text-lg font-medium">${cart.price}</p>
                   <div className="flex gap-4">
                     <div className="border-[2px] py-1 px-2 flex gap-3 items-center">
@@ -104,7 +104,7 @@ export default function Cart() {
           </div>
         </div>
 
-        <div className="lg:col-span-2 pb-4 flex flex-col gap-4 w-full h-fit bg-gray-100 rounded-sm p-2 sticky top-20">
+        <div className="lg:col-span-2 p-6 flex flex-col gap-4 w-full h-fit bg-gray-100 rounded-sm sticky top-20">
           <h2 className="text-2xl font-semibold my-4">Cart Totals</h2>
           <div className="flex gap-4">
             <p>Subtotal</p>

@@ -3,8 +3,8 @@ import { paymentLogo } from "../assets";
 
 export default function Footer() {
   return (
-    <div className="bg-black max-w-screen-xl mx-auto text-[#949494] py-20 font-titleFont">
-      <div className="px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8">
+    <div className="bg-black text-[#949494] py-20 font-titleFont">
+      <div className="px-4 max-w-screen-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8">
         <div className="text-gray-100 flex flex-col gap-7 items-start">
           <h1 className="flex items-center">
             <span className="text-2xl mr-2">

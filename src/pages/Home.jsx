@@ -12,7 +12,7 @@ export default function Home() {
   }, [data]);
 
   return (
-    <main className="max-w-screen-xl mx-auto">
+    <main className="max-w-screen-2xl mx-auto">
       <Banner />
       <Products products={products} />
     </main>

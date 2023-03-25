@@ -9,7 +9,7 @@ export default function Banner() {
     "https://amazonproone.vercel.app/static/media/img1.efb3d39101f7ef77d616.jpg",
   ];
   return (
-    <div className="h-64 sm:h-72 md:h-96 lg:h-screen lg:min-h-[520px]">
+    <div className="h-64 sm:h-72 md:h-96 lg:h-screen lg:min-h-[520px] lg:max-h-[720px]">
       <Carousel indicators={false}>
         {data.map((img, index) => (
           <img
