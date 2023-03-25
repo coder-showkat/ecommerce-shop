@@ -57,13 +57,15 @@ export default function Header() {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="/navbars" active={true}>
-          Home
-        </Navbar.Link>
-        <Navbar.Link href="/navbars">Pages</Navbar.Link>
-        <Navbar.Link href="/navbars">Shop</Navbar.Link>
-        <Navbar.Link href="/navbars">Element</Navbar.Link>
-        <Navbar.Link href="/navbars">Blog</Navbar.Link>
+        <Link to="/">
+          <Navbar.Link className="cursor-pointer" active={true}>
+            Home
+          </Navbar.Link>
+        </Link>
+        <Navbar.Link className="cursor-pointer">Pages</Navbar.Link>
+        <Navbar.Link className="cursor-pointer">Shop</Navbar.Link>
+        <Navbar.Link className="cursor-pointer">Element</Navbar.Link>
+        <Navbar.Link className="cursor-pointer">Blog</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );
