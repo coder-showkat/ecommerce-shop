@@ -37,15 +37,15 @@ export default function Header() {
           label={
             <Avatar
               alt="User settings"
-              img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+              img="https://avatars.githubusercontent.com/u/119802653?v=4"
               rounded={true}
             />
           }
         >
           <Dropdown.Header>
-            <span className="block text-sm">Bonnie Green</span>
+            <span className="block text-sm">Showkat Ali Sam</span>
             <span className="block truncate text-sm font-medium">
-              name@flowbite.com
+              showkat.official2@gmail.com
             </span>
           </Dropdown.Header>
           <Dropdown.Item>Dashboard</Dropdown.Item>
