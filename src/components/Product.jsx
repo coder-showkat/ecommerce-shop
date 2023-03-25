@@ -14,7 +14,7 @@ export default function Product() {
   const { image, isNew, title, oldPrice, price, description, category } =
     details;
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 py-6 px-4 gap-y-6 sm:gap-y-0 sm:gap-x-6 max-w-screen-2xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-3 pt-8 pb-14 px-4 gap-y-6 sm:gap-y-0 sm:gap-x-8 max-w-screen-2xl mx-auto">
       <div className="relative col-span-1">
         <img src={image} alt="" className="w-full" />
         <div className="absolute top-4 right-0">
