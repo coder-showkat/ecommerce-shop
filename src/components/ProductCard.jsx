@@ -21,7 +21,7 @@ export default function ProductCard({ product }) {
       onMouseOut={() => setHover(false)}
     >
       <div
-        className="w-full h-96 overflow-hidden hover:cursor-pointer"
+        className="w-full h-96 overflow-hidden cursor-pointer"
         onClick={handleDetails}
       >
         <img
@@ -37,7 +37,7 @@ export default function ProductCard({ product }) {
           </h5>
           <div className="w-28 self-end flex-shrink-0 overflow-hidden">
             <div
-              className={`flex w-56 justify-between relative duration-500 hover:cursor-pointer ${
+              className={`flex w-56 justify-between relative duration-500 cursor-pointer ${
                 hover ? "-left-28" : "left-0"
               }`}
             >

@@ -17,16 +17,16 @@ export default function Footer() {
           <p className="text-sm tracking-wide">© Showkat Ali Sam</p>
           <img src={paymentLogo} alt="paymentLogo" />
           <div className="flex gap-4 text-xl">
-            <span className="text-gray-300 hover:text-gray-100 duration-300 hover:cursor-pointer">
+            <span className="text-gray-300 hover:text-gray-100 duration-300 cursor-pointer">
               <ion-icon name="logo-github"></ion-icon>
             </span>
-            <span className="text-gray-300 hover:text-gray-100 duration-300 hover:cursor-pointer">
+            <span className="text-gray-300 hover:text-gray-100 duration-300 cursor-pointer">
               <ion-icon name="logo-facebook"></ion-icon>
             </span>
-            <span className="text-gray-300 hover:text-gray-100 duration-300 hover:cursor-pointer">
+            <span className="text-gray-300 hover:text-gray-100 duration-300 cursor-pointer">
               <ion-icon name="logo-linkedin"></ion-icon>
             </span>
-            <span className="text-gray-300 hover:text-gray-100 duration-300 hover:cursor-pointer">
+            <span className="text-gray-300 hover:text-gray-100 duration-300 cursor-pointer">
               <ion-icon name="logo-instagram"></ion-icon>
             </span>
           </div>

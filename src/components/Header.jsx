@@ -10,7 +10,7 @@ export default function Header() {
       className="max-w-screen-xl shadow-lg mx-auto sticky top-0 z-20"
     >
       <Link to="/">
-        <div className="hover:cursor-pointer flex items-center">
+        <div className="cursor-pointer flex items-center">
           <span className="text-2xl mr-2">
             <ion-icon name="cart-outline"></ion-icon>
           </span>
@@ -22,7 +22,7 @@ export default function Header() {
 
       <div className="flex items-center md:order-2">
         <Link to="/cart">
-          <div className="relative mr-2 hover:cursor-pointer">
+          <div className="relative mr-2 cursor-pointer">
             <img className="w-6" src={cartImg} alt="" />
             <span id="card-count" className="absolute top-1.5 text-sm left-2">
               {JSON.parse(localStorage.getItem("shoppingCart"))

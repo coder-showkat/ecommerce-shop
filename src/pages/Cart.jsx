@@ -64,7 +64,7 @@ export default function Cart() {
                 >
                   <div className="flex flex-col md:flex-row w-44 h-52 items-center gap-2">
                     <span
-                      className="text-xl hover:cursor-pointer"
+                      className="text-xl cursor-pointer"
                       onClick={() => removeCart(cart.title)}
                     >
                       <ion-icon name="close-outline"></ion-icon>
