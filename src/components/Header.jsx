@@ -1,9 +1,26 @@
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
-import React from "react";
+import PubSub from "pubsub-js";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { cartImg } from "../assets/index";
 
 export default function Header() {
+  const [count, setCount] = useState(
+    JSON.parse(localStorage.getItem("shoppingCart"))
+      ?.map((item) => item.quantity)
+      .reduce((a, b) => a + b, 0) || 0
+  );
+
+  useEffect(() => {
+    const token = PubSub.subscribe("valueChanged", (event, data) => {
+      setCount(data);
+    });
+
+    return () => {
+      PubSub.unsubscribe(token);
+    };
+  }, []);
+
   return (
     <header className="shadow-lg bg-white border-gray-200 sticky top-0 z-20">
       <Navbar fluid={true} className="max-w-screen-2xl mx-auto">
@@ -23,9 +40,7 @@ export default function Header() {
             <div className="relative mr-2 cursor-pointer">
               <img className="w-6" src={cartImg} alt="" />
               <span id="card-count" className="absolute top-1.5 text-sm left-2">
-                {JSON.parse(localStorage.getItem("shoppingCart"))
-                  ?.map((item) => item.quantity)
-                  .reduce((a, b) => a + b, 0) || 0}
+                {count}
               </span>
             </div>
           </Link>
@@ -55,11 +70,7 @@ export default function Header() {
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          <Link to="/">
-            <Navbar.Link className="cursor-pointer" active={true}>
-              Home
-            </Navbar.Link>
-          </Link>
+          <Navbar.Link className="cursor-pointer">Home</Navbar.Link>
           <Navbar.Link className="cursor-pointer">Pages</Navbar.Link>
           <Navbar.Link className="cursor-pointer">Shop</Navbar.Link>
           <Navbar.Link className="cursor-pointer">Element</Navbar.Link>

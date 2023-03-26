@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { imgCart } from "../assets";
-import { changeHeaderCartQty } from "../utilities/changeHeaderCartQty";
 import { notifyError, notifyWarning } from "../utilities/notify";
 
 export default function Cart() {
@@ -27,21 +26,28 @@ export default function Cart() {
       ...carts.filter((cart) => cart.title !== title),
     ];
 
-    if (newCarts.map((cart) => cart.quantity).reduce((a, b) => a + b, 0) > 9) {
+    const newCartsQty = newCarts
+      .map((cart) => cart.quantity)
+      .reduce((a, b) => a + b, 0);
+
+    if (newCartsQty > 9) {
       notifyError("Sorry! You can not add items more than 9.");
       return;
     }
 
     setCarts(newCarts);
     localStorage.setItem("shoppingCart", JSON.stringify(newCarts));
-    changeHeaderCartQty();
+    PubSub.publish("valueChanged", newCartsQty);
   };
 
   const removeCart = (title) => {
     const newCarts = carts.filter((cart) => cart.title !== title);
     setCarts(newCarts);
     localStorage.setItem("shoppingCart", JSON.stringify(newCarts));
-    changeHeaderCartQty();
+    PubSub.publish(
+      "valueChanged",
+      newCarts.map((item) => item.quantity).reduce((a, b) => a + b, 0)
+    );
     notifyWarning(title + " is removed from cart!");
   };
 

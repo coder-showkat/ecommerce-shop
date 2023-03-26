@@ -1,5 +1,6 @@
-import { changeHeaderCartQty } from "./changeHeaderCartQty";
+import PubSub from 'pubsub-js';
 import { notifyError, notifySuccess } from "./notify";
+
 
 const addToCart = (image, title, price, quantity) => {
     let items = [];
@@ -19,12 +20,12 @@ const addToCart = (image, title, price, quantity) => {
       const cartCount = newItems.map(item=>item.quantity).reduce((a,b)=>a+b, 0);
       
       if (cartCount > 9) {
-        changeHeaderCartQty();
+        PubSub.publish('valueChanged', 9);
         notifyError("Sorry! You can not add items more than 9.");
       }
       else {
         localStorage.setItem("shoppingCart", JSON.stringify(newItems));
-        changeHeaderCartQty();
+        PubSub.publish('valueChanged', cartCount);
       notifySuccess(title + " is added to cart!");
       }
     };
