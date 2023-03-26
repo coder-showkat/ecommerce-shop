@@ -39,9 +39,7 @@ export default function Header() {
           <Link to="/cart">
             <div className="relative mr-2 cursor-pointer">
               <img className="w-6" src={cartImg} alt="" />
-              <span id="card-count" className="absolute top-1.5 text-sm left-2">
-                {count}
-              </span>
+              <span className="absolute top-1.5 text-sm left-2">{count}</span>
             </div>
           </Link>
           <Dropdown
